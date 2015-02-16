@@ -1,0 +1,17 @@
+{
+    "contents" : "Opdata<- read.csv('Diabetes_output.csv',header=T)\nOpdata\nhead(Opdata)\n\ntable(Opdata$f9,Opdata$O1)\n\n\npnn <- learn(norms)\npnn <- smooth(pnn, sigma=0.9)\npnn$sigma\nguess(pn,c(1,1))\ntdata <- read.csv('sctrain.csv',header=T)\n\npnn <- learn(tdata)\npnn<- smooth(pnn, sigma =0.9)\npnn$sigma\nguess(pnn,c(0.390808691, -1.074747484,\t-0.126741703,\t0.394929312,\t0.020241877,\t-0.280391492,\t-0.480199939,\t-0.835873376))\nguess(pnn,c(0.390808691, -1.074747484,  -0.126741703,\t0.394929312,\t0.020241877,\t-0.280391492,\t-0.480199939,\t-0.835873376))$category\nguess(pnn,c(0.390808691, -1.074747484,  -0.126741703,\t0.394929312,\t0.020241877,\t-0.280391492,\t-0.480199939,\t-0.835873376))$probabilities\n\n## try to guess the data using CV data file\ngd <- read.csv('scCV.csv',header=T)\ngd\nhead(gd)\nguess(pnn,head(gd[2:9]))\nhead(gd[2:9])\n\n\n## Using the complete neural network to test the data\n\ncd <- read.csv('Complete.csv',header=T)\n\nhead(cd)\nls()\n\n## cd  is the complete data that has been read for the Neural network\npnn <- learn(cd)\npnn <- smooth(pnn, sigma=0.9)\npnn$sigma\n\n\n## Checking out the constructed PNN\npnn$model\npnn$category.column\npnn$k\npnn$n\nperf(pnn)\n",
+    "created" : 1401087998583.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3799727355",
+    "id" : "E50F26EC",
+    "lastKnownWriteTime" : 1401102186,
+    "path" : "D:/DiabetesData/Diabetes_complete/Rproj/PNN_outputSplit/PNNOutput Split.R",
+    "project_path" : "PNNOutput Split.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

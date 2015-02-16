@@ -1,0 +1,17 @@
+{
+    "contents" : "## Complete PNN frame work\ndata <- read.csv('sctrain.csv',header=T)\ndata\nhead(data)\n## Gives me the first column in the data\n\n\npnn <- learn(data)\npnn<- smooth(pnn, sigma =8.584193)\npnn$sigma\nperf(pnn)\n\n## PNN has been trained, guess the category now\nguess(pnn, c(0.390808691,-1.074747484,-0.126741703,0.394929312,0.020241877,-0.280391492,-0.480199939,-0.835873376))$category\n\n\n## Cross Validation data set\nCVdata <- read.csv('scCV.csv',header=T)\nCVdata\nhead(CVdata)\nhead(CVdata[2:10,],1)\nguess(pnn,head(CVdata[2:10,]) )$category\n\n\n## Checking observations\nCVdata\nhead(CVdata)\n## selecting just columns except 1\nREmove the class variable \nWCCVdata <- CVdata[2:9]\nhead(CVdata[2:9])\n## CV data without the class variable\nWCCVdata \nhead(WCCVdata)\nas.matrix(WCCVdata[2,])\nclass(WCCVdata[2,])\n\nc(1,2,3)\nclass(c(1,2,3))\nas.matrix(WCCVdata[1,])\n## data from the first row and second column\nCVdata[1,2]\n\nguess(pnn, as.matrix(WCCVdata[2,]))$category\n\n\n\n## Construct a loop to evaluate the complete data\npred\nfor (i in 1:100)\n{\n  \n  pred[i] <-guess(pnn, as.matrix(WCCVdata[i,]))$category\n  \n  \n}\nprint(pred)\n\n## Plot the table for predicted and the actual values\n\ntable(CVdata[1:100,1], pred)\n\n\n########################################################################\n\n\n\n",
+    "created" : 1401175881356.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "944174289",
+    "id" : "FA8356A0",
+    "lastKnownWriteTime" : 1401181169,
+    "path" : "D:/DiabetesData/Diabetes_complete/Rproj/PNN_outputSplit/PNNComp.R",
+    "project_path" : "PNNComp.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

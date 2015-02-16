@@ -1,0 +1,17 @@
+{
+    "contents" : "pnn <- learn(cd)\npnn <- smooth(pnn, sigma =15 )\npnn$sigma\n\n\n## Checking out the constructed PNN\npnn$model\npnn$category.column\npnn$k\npnn$n\nperf(pnn)\n\n## install package rgenoud to automatically take the values of sigma\npnn\n",
+    "created" : 1401102191361.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2991868357",
+    "id" : "994ACFE3",
+    "lastKnownWriteTime" : 1401175705,
+    "path" : "D:/DiabetesData/Diabetes_complete/Rproj/PNN_outputSplit/AutoSigmaRgenoud.R",
+    "project_path" : "AutoSigmaRgenoud.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

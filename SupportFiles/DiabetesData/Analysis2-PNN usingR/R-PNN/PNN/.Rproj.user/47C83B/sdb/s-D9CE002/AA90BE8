@@ -1,0 +1,17 @@
+{
+    "contents" : "################PNN Complete 2\n\n\n## Read the training data, scaled training data\n\ndata <- read.csv('sctrain.csv',header=T)\n\n\ndata\nhead(data)\n\n### Learn the samples and train NN\n\npnn <- learn(data)\npnn<- smooth(pnn, sigma =8.3)\npnn$sigma\nperf(pnn)\n## sucess- 0.7486034- sigma rgenoud\n\n## 1 sr - 0.7318436\n## 15 sr - 0.7467412\n\n\n### Test the trained sample using the CV test data\n\n## Read CV data set \nCVdata <- read.csv('scCV.csv',header=T)\n## Remove the output/class variable\nWCCVdata <- CVdata[2:9]\n\nguess(pnn, as.matrix(WCCVdata[2,]))$category\n\npred<-0\nfor (i in 1:116)\n{\n  \n  pred[i] <-guess(pnn, as.matrix(WCCVdata[i,]))$category\n  \n  \n}\nprint(pred)\n\ntable(CVdata[1:116,1], pred)\n",
+    "created" : 1401181173977.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4250192854",
+    "id" : "AA90BE8",
+    "lastKnownWriteTime" : 1401183768,
+    "path" : "D:/DiabetesData/Diabetes_complete/Rproj/PNN_outputSplit/PNNComp2.R",
+    "project_path" : "PNNComp2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
